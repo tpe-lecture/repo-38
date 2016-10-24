@@ -9,13 +9,14 @@ import java.awt.Point;
 import de.smits_net.games.framework.board.Board;
 import de.smits_net.games.framework.image.ImageBase;
 import de.smits_net.games.framework.sprite.Sprite;
+import de.smits_net.games.framework.sprite.Velocity;
 
 /**
  * Spielfeld.
  */
-public class GameBoard {
+public class GameBoard extends Board {
 // TODO: Von Board ableiten
-
+    
     /** Alien, das durch das Bild läuft. */
     private AlienSprite alien;
 
@@ -30,14 +31,21 @@ public class GameBoard {
      */
     public GameBoard() {
 // TODO: Einkommentieren
-//        // neues Spielfeld anlegen
-//        super(10, new Dimension(800, 600), Color.BLACK);
-//
-//        // Hintergrundbild laden
-//        background = ImageBase.loadImage("assets/background");
-//
+        // neues Spielfeld anlegen
+        super(15, new Dimension(800, 600), Color.BLACK);
+
+        // Hintergrundbild laden
+        background = ImageBase.loadImage("assets/background");
+
 
         // TODO: Alien und Asteroid anlegen und positionieren
+        Point locationAlien = new Point();
+        locationAlien.setLocation(750, 300);
+        Point locationAsteroid = new Point();
+        locationAsteroid.setLocation(200, 400);
+        alien = new AlienSprite(this, locationAlien);
+        asteroid = new Asteroid (this, locationAsteroid);
+        alien.setVisible(true);
     }
 
     /**
@@ -54,6 +62,8 @@ public class GameBoard {
      */
     public void drawGame(Graphics g) {
         // TODO: Alle Objekte zeichnen
+        alien.draw(g);
+        asteroid.draw(g);
     }
 
     /**
@@ -65,12 +75,13 @@ public class GameBoard {
     public boolean updateGame() {
 
         // TODO: Die Objekte bewegen
-
+        asteroid.move();
+        alien.move();
+        
         // Kollision erkennen
-// TODO: Einkommentieren
-//        if (alien.intersects(asteroid) && alien.isActive()) {
-//            alien.explode();
-//        }
+        if (alien.intersects(asteroid) && alien.isActive()) {
+            alien.explode();
+        }
 
         return true;
     }
