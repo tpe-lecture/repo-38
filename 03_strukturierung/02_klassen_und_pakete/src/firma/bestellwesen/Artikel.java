@@ -7,7 +7,7 @@ import firma.stammdaten.Lieferant;
 public class Artikel {
 
     /** Name des Artikels. */
-    private String name;
+    private String biest;
     
     /** Preis des Artikels. */
     private int preis;
