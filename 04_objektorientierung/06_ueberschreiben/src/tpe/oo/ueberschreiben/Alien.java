@@ -27,8 +27,14 @@ public class Alien extends AnimatedSprite {
                 new AnimatedImage(50, 5,
                         "assets/spike_fist_move_strip5.png"));
         velocity.setVelocity(Direction.WEST, ALIEN_SPEED);
+        
     }
 
+    public void mousePressed(){
+        super.mousePressed();
+        explode();
+    }
+    
     /**
      * Alien explodieren lassen.
      */
