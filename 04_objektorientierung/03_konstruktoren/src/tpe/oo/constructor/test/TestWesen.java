@@ -21,11 +21,12 @@ public class TestWesen {
     @Test
     public void testNachtelf() {
         /*
-        assertTrue("Nachtelf erbt nicht von Figur", new Nachtelf("") instanceof Wesen);
-        assertEquals(Nachtelf.STANDARD_NATURWIDERSTAND, new Nachtelf("").getNaturwiderstand());
-        assertEquals(120, new Nachtelf("", 120).getNaturwiderstand());
-        assertEquals("Hugo", new Nachtelf("Hugo").getName());
-        */
+         * assertTrue("Nachtelf erbt nicht von Figur", new Nachtelf("")
+         * instanceof Wesen); assertEquals(Nachtelf.STANDARD_NATURWIDERSTAND,
+         * new Nachtelf("").getNaturwiderstand()); assertEquals(120, new
+         * Nachtelf("", 120).getNaturwiderstand()); assertEquals("Hugo", new
+         * Nachtelf("Hugo").getName());
+         */
     }
     
     /**
