@@ -60,7 +60,7 @@ public class CrypterImpl implements Crypter {
 				index++;
 				lengthOfString--;
 			} else if(input.charAt(index) < 48 & input.charAt(index) > 57 & input.charAt(index) < 97 & input.charAt(index) >122) {
-				index++;
+				index++ ;
 				lengthOfString--;
 			} else {
 				changer[index] = input.charAt(index);
