@@ -1,5 +1,11 @@
 package tpe.testate.crypter;
 
+/**
+ * Die Klasse CrypterImpl implementiert das Interface Crypter.
+ * In CrypterImpl werden die Methoden, die laut dem Interface vorhanden sein müssen, implementiert.
+ * Diese Klasse enthält die Methoden encrypt, welche einen String verschlüsselt, und decrypt, welche eine String entschlüsselt.
+ * @author Fabian
+ */
 public class CrypterImpl implements Crypter {
 	
 	/**
@@ -11,8 +17,6 @@ public class CrypterImpl implements Crypter {
 	 */
 	@Override
 	public String encrypt(String input) {
-		
-		
 		input = input.toLowerCase();
 		String convertedString = "";
 		int index = 0;
@@ -60,7 +64,7 @@ public class CrypterImpl implements Crypter {
 				index++;
 				lengthOfString--;
 			} else if(input.charAt(index) < 48 & input.charAt(index) > 57 & input.charAt(index) < 97 & input.charAt(index) >122) {
-				index++ ;
+				
 				lengthOfString--;
 			} else {
 				changer[index] = input.charAt(index);
